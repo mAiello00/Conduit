@@ -25,7 +25,7 @@ type Response struct {
 	RoutedTo  string `json:"routed_to"`
 }
 
-func SendRequest(httpClient *http.Client, requestID, input string) (string, string, error) {
+func SendRequest(httpClient *http.Client, requestID string, input string) (string, string, error) {
 	message, _ := json.Marshal(Request{RequestID: requestID, Input: input})               // create json message we are sending
 	resp, err := httpClient.Post(routerURL, "application/json", bytes.NewReader(message)) // POST request to router
 
