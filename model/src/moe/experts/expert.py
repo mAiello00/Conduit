@@ -2,6 +2,7 @@ import torch
 from torch.nn import nn
 import torch.nn.functional as F
 import math
+import sys
 
 # Hyperparameters
 batch_size = 64 # number of independent sequences being processed in parallel
@@ -18,6 +19,8 @@ dropout  = 0.2
 
 # make environment variable
 vocab_size = 65
+MODE = "TMP" 
+assert MODE in ["TMP", "TRAIN", "TEST", "INFERENCE"]
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 torch.manual_seed(1337) # setting seed so we can reproduce our results
@@ -157,3 +160,35 @@ def train():
         optimizer.step() # update hte parameters
 
     print(loss.item())
+
+def Tokenize(input):
+    pass
+
+def Test():
+    pass
+
+# TODO: properly format strings
+def ReadInput():
+    input = []
+    for line in sys.stdin:
+        input.append(line)
+        if line == "<END>":
+            break
+    return input.join("")
+            
+def main():
+
+    prompt = ReadInput()
+
+    if MODE == "TMP":
+        Test(prompt)
+    elif MODE == "TRAIN":
+        pass
+    elif MODE == "TEST":
+        pass
+    elif MODE == "INFERENCE":
+        pass
+
+
+if __name__ == "__main__":
+    main()
