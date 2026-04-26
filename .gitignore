@@ -13,3 +13,6 @@ router/bin/
 
 # Editor / IDE
 .vscode
+
+# Dockerfiles
+Dockerfile

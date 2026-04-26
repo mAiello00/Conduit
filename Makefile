@@ -1,12 +1,15 @@
 build-client:
-	cd router && go build -o bin/moe-client cmd/client/client.go
+	go build -o bin/moe-client router/cmd/client/client.go
+
+build-expert-server:
+	go build -o bin/expert_server model/src/moe/experts/expert_server.go
 
 start-client:
-	./router/bin/moe-client
+	./bin/moe-client
 
 # Compile and launch in one step - gets rid of binary afterwards 
 run-client:
 	cd router && go run cmd/client/client.go
 
 clean:
-	cd router && rm -rf bin/
+	rm -rf bin/

@@ -38,3 +38,6 @@ class GatingNetwork(nn.Model):
         routing_weights = routing_weights / routing_weights.sum(dim = -1, keepdim = True)
 
         return routing_weights, selected_experts, router_probs
+    
+def train():
+    pass
