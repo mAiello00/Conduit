@@ -1,4 +1,4 @@
-package main
+package preprocessor
 
 import (
 	"fmt"
@@ -11,4 +11,8 @@ func Tokenize(input string) []string {
 	fmt.Printf("\n%s\n", tokens)
 
 	return tokens
+}
+
+func ProcessInput(input string) bool {
+	return true
 }
