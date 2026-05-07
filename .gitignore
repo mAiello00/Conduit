@@ -11,8 +11,11 @@ router/bin/
 # .env file
 .env
 
+# virtual environment
+.venv
+
 # Editor / IDE
 .vscode
 
 # Dockerfiles
-Dockerfile
+/docker

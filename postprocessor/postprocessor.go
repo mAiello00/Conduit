@@ -1,0 +1,5 @@
+package postprocessor
+
+func CheckResponse() {
+
+}
