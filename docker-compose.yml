@@ -1,0 +1,30 @@
+services:
+  llm-1:
+    build: ./llm-microservice
+    env_file:
+      - ./shared/env
+    environment:
+      - PORT = 8082
+      - LLM_ID = 1
+    ports:
+      - "8082:8082"
+
+  llm-2:
+    build: ./llm-microservice
+    env_file:
+      - ./shared/env
+    environment:
+      - PORT = 8083
+      - LLM_ID = 2
+    ports:
+      - "8083:8083"
+
+  llm-3:
+    build: ./llm-microservice
+    env_file:
+      - ./shared/env
+    environment:
+      - PORT = 8084
+      - LLM_ID = 3
+    ports:
+      - "8084:8084"
